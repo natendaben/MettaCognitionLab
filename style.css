@@ -1,0 +1,74 @@
+/*
+Theme Name: Annie Theme
+Author: Nate Bennett
+Description: Theme developed for Annie's MettaCognition Lab Website
+Version: 0.0.1
+Tags: clean
+*/
+
+/* ~~~~~~~~~~ GENERAL STYLES ~~~~~~~~~~ */
+
+body{
+    font-family: 'Raleway', sans-serif; 
+}
+
+/* ~~~~~~~~~~ HEADER STYLES ~~~~~~~~~~ */
+.title{
+    font-weight: 700;
+    font-size: 200%;
+    width: 40%;
+    margin-left: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.metta{
+    color: #BCBCC1;
+    margin-left: 10px;
+}
+#logo{
+    max-width: 70px;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.cognition{
+    /* color: darkgray; */
+    color: #303033;
+}
+.lab{
+    /* color: lightgray; */
+    color: #BCBCC1;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 4px solid darkgray;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 60%;
+}
+nav a, .title a{
+    text-decoration: none;
+    margin-left: 4%;
+    text-align: right;
+    font-size: 120%;
+    font-weight: 700;
+}
+nav a:visited, nav a:link, nav a:active, .title a:visited, .title a:link, .title a:active{
+    /* color: darkgray; */
+    color: #303033;
+}
+nav a:hover, .title a:hover{
+    color: darkgrey;
+}
+.lastlink{
+    margin-right: 5%;
+}
