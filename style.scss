@@ -1,0 +1,335 @@
+/*
+Theme Name: MettaCognition Lab
+Author: Nate Bennett
+Description: Theme developed for Annie's MettaCognition Lab Website
+Version: 0.0.1
+Tags: clean
+*/
+
+// Variables
+$primaryColor: #104547;
+$secondaryColor: #81B29A;
+$bgColor: #E0FBFC;
+$footerBgColor: #ACDCE2;
+$mainFont: 'Raleway', sans-serif;
+$accentFont: 'Bitter', serif;
+$standardMargin: 40px;
+$doubleMargin: 80px;
+$pageWidth: 70%;
+
+//Mixins
+@mixin centerFlex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~ GLOBAL STYLES ~~~~~~~~~~~~~~~~~~~~ */
+body{
+    font-family: $mainFont; 
+    background-color: $bgColor;
+    color: $primaryColor;
+}
+h2, h3, h4, h5, h6{
+    font-family: $accentFont;
+    font-weight: bold;
+    text-align: center;
+    padding-top: $standardMargin;
+}
+h2{
+    font-size: 250%;
+}
+h3{
+    font-size: 200%;
+}
+h4{
+    font-size: 150%;
+}
+p, li{
+    font-size: 110%;
+    line-height: 1.3em;
+}
+a{
+    text-decoration: none;
+}
+hr {
+    width: 100%;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), $primaryColor, rgba(0, 0, 0, 0));
+    border: none;
+    margin-top: $standardMargin;
+ }
+ #no-content{
+     text-align: center;
+     font-size: 130%;
+ }
+
+
+/* ~~~~~~~~~~~~~~~~~~~~ HEADER STYLES ~~~~~~~~~~~~~~~~~~~~ */
+.title{
+    font-weight: 700;
+    font-size: 200%;
+    width: 40%;
+    margin-left: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+#logo{
+    max-width: 70px;
+    margin: 1% 0% 1% 0%;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 4px solid $primaryColor;
+    /* background-color: #ACDCE2; */
+}
+nav div ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    /* width: 60%; */
+}       
+nav ul li, .title a{
+    margin-left: 5%;
+    text-align: right;
+    font-size: 120%;
+    font-weight: 700;
+}
+a:visited, a:link, a:active{
+    color: $primaryColor;
+}
+a:hover{
+    color: $secondaryColor;
+}
+nav li:last-child{
+    margin-right: 5%;
+}
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~ HOMEPAGE STYLES ~~~~~~~~~~~~~~~~~~~~ */
+.hero-image{
+    max-width: 100%;
+    height: 70vh;
+    background: no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 4px solid $primaryColor;
+}
+.hero-text{
+    color: white;
+    text-align: center;
+    font-size: 200%;
+    font-weight: bold;
+    /* font-family: 'Playfair Display', serif;
+    font-style: italic;
+    letter-spacing: 3px; */
+}
+.front-page-content{
+    width: $pageWidth;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5% 20% 5% 20%;
+}
+.front-page-intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.intro-text{
+    margin-top: 7%;
+}
+.about-short{
+    font-size: 200%;
+    font-family: $accentFont;
+}
+.about-long{
+    font-size: 130%;
+}
+.intro-para{
+    margin-top: 3%;
+    line-height: 1.3em;
+}
+
+
+ /* ~~~~~~~~~~~~~~~~~~~~ PAGE STYLES ~~~~~~~~~~~~~~~~~~~~ */
+.content-container{
+    @include centerFlex();
+    padding: $standardMargin 0 $doubleMargin 0;
+}
+ article{
+    width: $pageWidth;
+}
+.page img{
+    padding-top: $standardMargin;
+}
+.page p{
+    padding-top: $standardMargin;
+}
+
+
+ /* ~~~~~~~~~~~~~~~~~~~~ WP BLOCKS ~~~~~~~~~~~~~~~~~~~~ */
+.wp-block-cover, .wp-block-cover-image {
+    margin-top: $standardMargin;
+    margin-bottom: 0;
+}
+.wp-block-image{
+    margin: 0;
+    margin-top: $standardMargin;
+}
+// .wp-block-gallery{
+// }
+.page ul{
+    padding-top: $standardMargin; 
+}
+.wp-block-audio{
+    padding-top: $standardMargin; 
+}
+.page figcaption{
+    font-size: 100%;
+}
+.wp-block-file{
+    margin-bottom: 1em;
+    margin-top: $standardMargin;
+}
+.wp-block-video{
+    margin-top: $standardMargin;
+}
+.wp-block-code{
+    margin-top: $standardMargin;
+    background-color: white;
+    padding: 20px;
+    line-height: 1.5em;
+    border: 2px solid $primaryColor;
+    font-family: 'Roboto Mono', monospace;
+    border-radius: 10px;
+}
+.wp-block-preformatted{
+    margin-top: $standardMargin;
+}
+.wp-block-pullquote{
+    margin-top: $standardMargin;
+    border-top: 2px solid $primaryColor;
+    border-bottom: 2px solid $primaryColor;
+}
+.page figure blockquote p{
+    padding-top: 0;
+    font-weight: bold;
+}
+.wp-block-table{
+    margin-top: $standardMargin;
+}
+.wp-block-verse{
+    margin-top: $standardMargin;
+}
+.wp-block-button{
+    margin-top: $standardMargin;
+    margin-bottom: 0;
+    a{
+        color: white;
+    }
+    a:hover{
+        color: $secondaryColor;
+    }
+}
+.wp-block-columns{
+    div{
+        margin: 0;
+    }
+}
+.wp-block-media-text{
+    margin-top: $standardMargin;
+    p{
+        padding-top: 0;
+    }
+}
+.wp-block-search{
+    margin-top: $standardMargin;
+    input{
+        margin-top: 10px;
+        border: 2px solid $primaryColor;
+        border-radius: 5px;
+        padding: 10px;
+        font-family: $mainFont;
+    }
+    button{
+        margin-top: 10px;
+        border: 2px solid $primaryColor;
+        background: $primaryColor;
+        color: white;
+        border-radius: 5px;
+    }
+    button:hover{
+        color: $secondaryColor;
+    }
+}
+.wp-block-embed-vimeo{
+    margin-top: $standardMargin;
+    margin-bottom: 0;
+    div{
+        @include centerFlex();
+    }
+}
+.page figure img{
+    padding: 0;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~ MODULE STYLES ~~~~~~~~~~~~~~~~~~~~ */
+.module-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.module{
+    padding: 5%;
+    text-align: center;
+}
+.module-text h2{
+    font-family: $accentFont;
+    font-size: 150%;
+    margin: 5% 0% 5% 0%;
+}
+.module-icon img{
+    max-width: 50px;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~ FOOTER STYLES ~~~~~~~~~~~~~~~~~~~~ */
+#footer-logo{
+    max-width: 50px;
+    padding: 2%;
+    margin: 0;
+}
+footer{
+    background-color: $footerBgColor;
+    border-top: 4px solid $primaryColor;
+}
+.footer-branding{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 1% 1% 1%;
+
+}
+.footer-identity{
+    margin-left: 1%;
+}
+.footer-title{
+    font-size: 175%;
+    margin-bottom: 1%;
+}
+.copyright{
+    color: $secondaryColor;
+    padding-left: 1%;
+    padding-bottom: 15px;
+}

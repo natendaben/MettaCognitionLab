@@ -1,15 +1,22 @@
-</div><!-- /.container -->
-
-<footer class="blog-footer">
-  <p>© 2019 Annie Bruns</p>
+<?php if(get_theme_mod('at-footer-display') == 'Yes') {?>
+<footer>
+  <div class="footer-branding">
+  <a href="<?php echo get_bloginfo( 'wpurl' );?>"><img id="footer-logo" src="<?php $custom_logo_id = get_theme_mod( 'custom_logo' );$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );echo $image[0];?>" alt=""></a>
+    <div class="footer-identity">
+      <a href="<?php echo get_bloginfo( 'wpurl' );?>"><div class="footer-title"><?php echo get_bloginfo( 'name' ); ?></div></a>
+      <div class="footer-tagline"><?php echo get_bloginfo( 'description'); ?></div>
+    </div>
+  </div>
+  <!-- <?php $args = array(
+            'theme_location' => 'footer'
+          ); ?>
+  <?php wp_nav_menu(  $args  ); ?> -->
+  <?php if(get_theme_mod('at-copyright-display') == 'Yes') {?>
+  <div class="copyright"><?php echo get_theme_mod('at-copyright-text');?></div>
+  <?php } ?>
 </footer>
+<?php } ?>
 
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -1,74 +1,298 @@
 /*
-Theme Name: Annie Theme
+Theme Name: MettaCognition Lab
 Author: Nate Bennett
 Description: Theme developed for Annie's MettaCognition Lab Website
 Version: 0.0.1
 Tags: clean
 */
+/* ~~~~~~~~~~~~~~~~~~~~ GLOBAL STYLES ~~~~~~~~~~~~~~~~~~~~ */
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: #E0FBFC;
+  color: #104547; }
 
-/* ~~~~~~~~~~ GENERAL STYLES ~~~~~~~~~~ */
+h2, h3, h4, h5, h6 {
+  font-family: "Bitter", serif;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 40px; }
 
-body{
-    font-family: 'Raleway', sans-serif; 
-}
+h2 {
+  font-size: 250%; }
 
-/* ~~~~~~~~~~ HEADER STYLES ~~~~~~~~~~ */
-.title{
-    font-weight: 700;
-    font-size: 200%;
-    width: 40%;
-    margin-left: 1%;
+h3 {
+  font-size: 200%; }
+
+h4 {
+  font-size: 150%; }
+
+p, li {
+  font-size: 110%;
+  line-height: 1.3em; }
+
+a {
+  text-decoration: none; }
+
+hr {
+  width: 100%;
+  height: 1px;
+  background-image: linear-gradient(to right, transparent, #104547, transparent);
+  border: none;
+  margin-top: 40px; }
+
+#no-content {
+  text-align: center;
+  font-size: 130%; }
+
+/* ~~~~~~~~~~~~~~~~~~~~ HEADER STYLES ~~~~~~~~~~~~~~~~~~~~ */
+.title {
+  font-weight: 700;
+  font-size: 200%;
+  width: 40%;
+  margin-left: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center; }
+
+#logo {
+  max-width: 70px;
+  margin: 1% 0% 1% 0%; }
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 4px solid #104547;
+  /* background-color: #ACDCE2; */ }
+
+nav div ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* width: 60%; */ }
+
+nav ul li, .title a {
+  margin-left: 5%;
+  text-align: right;
+  font-size: 120%;
+  font-weight: 700; }
+
+a:visited, a:link, a:active {
+  color: #104547; }
+
+a:hover {
+  color: #81B29A; }
+
+nav li:last-child {
+  margin-right: 5%; }
+
+/* ~~~~~~~~~~~~~~~~~~~~ HOMEPAGE STYLES ~~~~~~~~~~~~~~~~~~~~ */
+.hero-image {
+  max-width: 100%;
+  height: 70vh;
+  background: no-repeat center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 4px solid #104547; }
+
+.hero-text {
+  color: white;
+  text-align: center;
+  font-size: 200%;
+  font-weight: bold;
+  /* font-family: 'Playfair Display', serif;
+  font-style: italic;
+  letter-spacing: 3px; */ }
+
+.front-page-content {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5% 20% 5% 20%; }
+
+.front-page-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.intro-text {
+  margin-top: 7%; }
+
+.about-short {
+  font-size: 200%;
+  font-family: "Bitter", serif; }
+
+.about-long {
+  font-size: 130%; }
+
+.intro-para {
+  margin-top: 3%;
+  line-height: 1.3em; }
+
+/* ~~~~~~~~~~~~~~~~~~~~ PAGE STYLES ~~~~~~~~~~~~~~~~~~~~ */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0 80px 0; }
+
+article {
+  width: 70%; }
+
+.page img {
+  padding-top: 40px; }
+
+.page p {
+  padding-top: 40px; }
+
+/* ~~~~~~~~~~~~~~~~~~~~ WP BLOCKS ~~~~~~~~~~~~~~~~~~~~ */
+.wp-block-cover, .wp-block-cover-image {
+  margin-top: 40px;
+  margin-bottom: 0; }
+
+.wp-block-image {
+  margin: 0;
+  margin-top: 40px; }
+
+.page ul {
+  padding-top: 40px; }
+
+.wp-block-audio {
+  padding-top: 40px; }
+
+.page figcaption {
+  font-size: 100%; }
+
+.wp-block-file {
+  margin-bottom: 1em;
+  margin-top: 40px; }
+
+.wp-block-video {
+  margin-top: 40px; }
+
+.wp-block-code {
+  margin-top: 40px;
+  background-color: white;
+  padding: 20px;
+  line-height: 1.5em;
+  border: 2px solid #104547;
+  font-family: 'Roboto Mono', monospace;
+  border-radius: 10px; }
+
+.wp-block-preformatted {
+  margin-top: 40px; }
+
+.wp-block-pullquote {
+  margin-top: 40px;
+  border-top: 2px solid #104547;
+  border-bottom: 2px solid #104547; }
+
+.page figure blockquote p {
+  padding-top: 0;
+  font-weight: bold; }
+
+.wp-block-table {
+  margin-top: 40px; }
+
+.wp-block-verse {
+  margin-top: 40px; }
+
+.wp-block-button {
+  margin-top: 40px;
+  margin-bottom: 0; }
+  .wp-block-button a {
+    color: white; }
+  .wp-block-button a:hover {
+    color: #81B29A; }
+
+.wp-block-columns div {
+  margin: 0; }
+
+.wp-block-media-text {
+  margin-top: 40px; }
+  .wp-block-media-text p {
+    padding-top: 0; }
+
+.wp-block-search {
+  margin-top: 40px; }
+  .wp-block-search input {
+    margin-top: 10px;
+    border: 2px solid #104547;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: "Raleway", sans-serif; }
+  .wp-block-search button {
+    margin-top: 10px;
+    border: 2px solid #104547;
+    background: #104547;
+    color: white;
+    border-radius: 5px; }
+  .wp-block-search button:hover {
+    color: #81B29A; }
+
+.wp-block-embed-vimeo {
+  margin-top: 40px;
+  margin-bottom: 0; }
+  .wp-block-embed-vimeo div {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
-.metta{
-    color: #BCBCC1;
-    margin-left: 10px;
-}
-#logo{
-    max-width: 70px;
-    margin-left: 1%;
-    margin-right: 1%;
-}
-.cognition{
-    /* color: darkgray; */
-    color: #303033;
-}
-.lab{
-    /* color: lightgray; */
-    color: #BCBCC1;
-}
-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-bottom: 4px solid darkgray;
-}
-nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 60%;
-}
-nav a, .title a{
-    text-decoration: none;
-    margin-left: 4%;
-    text-align: right;
-    font-size: 120%;
-    font-weight: 700;
-}
-nav a:visited, nav a:link, nav a:active, .title a:visited, .title a:link, .title a:active{
-    /* color: darkgray; */
-    color: #303033;
-}
-nav a:hover, .title a:hover{
-    color: darkgrey;
-}
-.lastlink{
-    margin-right: 5%;
-}
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+
+.page figure img {
+  padding: 0; }
+
+/* ~~~~~~~~~~~~~~~~~~~~ MODULE STYLES ~~~~~~~~~~~~~~~~~~~~ */
+.module-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; }
+
+.module {
+  padding: 5%;
+  text-align: center; }
+
+.module-text h2 {
+  font-family: "Bitter", serif;
+  font-size: 150%;
+  margin: 5% 0% 5% 0%; }
+
+.module-icon img {
+  max-width: 50px; }
+
+/* ~~~~~~~~~~~~~~~~~~~~ FOOTER STYLES ~~~~~~~~~~~~~~~~~~~~ */
+#footer-logo {
+  max-width: 50px;
+  padding: 2%;
+  margin: 0; }
+
+footer {
+  background-color: #ACDCE2;
+  border-top: 4px solid #104547; }
+
+.footer-branding {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px 1% 1% 1%; }
+
+.footer-identity {
+  margin-left: 1%; }
+
+.footer-title {
+  font-size: 175%;
+  margin-bottom: 1%; }
+
+.copyright {
+  color: #81B29A;
+  padding-left: 1%;
+  padding-bottom: 15px; }
+
+/*# sourceMappingURL=style.css.map */
