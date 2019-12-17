@@ -14,6 +14,7 @@ $footerBgColor: #ACDCE2;
 $mainFont: 'Raleway', sans-serif;
 $accentFont: 'Bitter', serif;
 $standardMargin: 40px;
+$oneAndAHalfMargin: 60px;
 $doubleMargin: 80px;
 $pageWidth: 70%;
 
@@ -35,7 +36,6 @@ body{
 h2, h3, h4, h5, h6{
     font-family: $accentFont;
     font-weight: bold;
-    text-align: center;
     padding-top: $standardMargin;
 }
 h2{
@@ -64,6 +64,17 @@ hr {
  #no-content{
      text-align: center;
      font-size: 130%;
+     height: 40vh;
+ }
+ .featured-image{
+     max-width: 100%;
+     margin: 2% 5% 0% 5%;
+ }
+ .f-img{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
  }
 
 
@@ -177,8 +188,34 @@ nav li:last-child{
 }
 .page p{
     padding-top: $standardMargin;
+    line-height: 1.4em;
 }
-
+.hero-post-image{
+    max-width: 100%;
+    height: 40vh;
+    background: no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 4px solid $primaryColor;
+}
+.date{
+    font-size: 130%;
+    padding-top: 2%;
+    font-weight: bold;
+}
+.archive-head div{
+    font-size: 150%;
+    padding-top: 20px;
+}
+.archive-head{
+    padding-bottom: 20px;
+    border-bottom: 2px solid $primaryColor;
+}
+.entry-content p{
+    padding-top: 15px;
+}
 
  /* ~~~~~~~~~~~~~~~~~~~~ WP BLOCKS ~~~~~~~~~~~~~~~~~~~~ */
 .wp-block-cover, .wp-block-cover-image {
@@ -191,8 +228,44 @@ nav li:last-child{
 }
 // .wp-block-gallery{
 // }
-.page ul{
+article>ul{
     padding-top: $standardMargin; 
+    padding-left: $oneAndAHalfMargin;
+}
+.content-container li{
+    list-style-type: circle;
+}
+li>ul>li{ //fix font size amplification in lists
+    font-size: 100%;
+}
+.wp-block-quote{
+    padding-left: $standardMargin;
+    margin-top: $standardMargin;
+    margin-left: $standardMargin;
+    border-left: 2px solid $primaryColor;
+}
+table{
+    width: 100%;
+}
+td{
+    border: 2px solid $primaryColor;
+    padding: 1%;
+    display: table-cell;
+    max-width: unset;
+}
+.has-large-font-size{
+    font-size: 170%;
+}
+.page .wp-block-quote>p{
+    padding-top: 0;
+    padding-bottom: 10px;
+}
+cite{
+    padding-top: 20px;
+}
+.content-container li>ul{
+    padding-top: 0;
+    margin-left: $standardMargin;
 }
 .wp-block-audio{
     padding-top: $standardMargin; 
@@ -244,6 +317,9 @@ nav li:last-child{
         color: $secondaryColor;
     }
 }
+.wp-block-button__link:visited, .wp-block-button__link:link{
+    color: white;
+}
 .wp-block-columns{
     div{
         margin: 0;
@@ -285,23 +361,46 @@ nav li:last-child{
 .page figure img{
     padding: 0;
 }
+#rpwwt-recent-posts-widget-with-thumbnails-2{
+    border-top: 2px solid $primaryColor;
+    margin-top: $standardMargin;
+
+    h3{
+        margin-bottom: $standardMargin;
+    }
+}
+#rpwwt-recent-posts-widget-with-thumbnails-2 img{
+    padding-top: 0;
+}
+.rpwwt-post-title{
+    font-weight: bold;
+}
+.rpwwt-post-excerpt{
+    padding-top: 5px;
+}
 
 /* ~~~~~~~~~~~~~~~~~~~~ MODULE STYLES ~~~~~~~~~~~~~~~~~~~~ */
 .module-grid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
 }
 .module{
     padding: 5%;
     text-align: center;
 }
+.module-description p{
+    padding-top: 8%;
+    margin: 0,
+}
 .module-text h2{
     font-family: $accentFont;
     font-size: 150%;
-    margin: 5% 0% 5% 0%;
+    margin: 0;
+    padding: 20px 0px 0px 0px;
 }
 .module-icon img{
-    max-width: 50px;
+    max-width: 30%;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~ FOOTER STYLES ~~~~~~~~~~~~~~~~~~~~ */

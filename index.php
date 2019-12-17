@@ -16,7 +16,7 @@ if(have_posts()) :
   else : ?>
   <div class="content-container">
     <article class="post page">
-      <p id="no-content">No content found :(</p>
+      <p id="no-content">No content could be found :(</p>
     </article>
   </div>
   

@@ -1,20 +1,31 @@
-<?php get_header(); ?>
+<?php
+get_header();
 
-	<div class="row">
-		<div class="col-sm-12">
+if(have_posts()) :
+  while(have_posts()) : the_post(); ?>
+  <?php if ( has_post_thumbnail() ) { ?>
+    <!-- <div class="f-img">
+        <img class="featured-image" src="<?php echo get_the_post_thumbnail_url(); ?>">
+    </div> -->
+    <div class="hero-post-image" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);">
+      <div class="hero-text"></div>
+    </div>
+  <?php } ?>
+  <div class="content-container">
+    <article class="post page">
+        <h2><?php the_title(); ?></h2>
+        <div class="date"><?php echo the_date(); ?></div>
+      <?php the_content(); ?>
+    </article>
+  </div>
 
-			<?php
-                if ( have_posts() ) : while ( have_posts() ) : the_post();
-                    get_template_part( 'content-single', get_post_format() );
+  <?php endwhile;
 
-                    if ( comments_open() || get_comments_number() ) :
-                        comments_template();
-                    endif;
+  else : 
+    echo '<p>No content found :(</p>';
+  
+  endif;
 
-                endwhile; endif;
-			?>
+  get_footer();
 
-		</div> <!-- /.col -->
-	</div> <!-- /.row -->
-
-<?php get_footer(); ?>
+?>

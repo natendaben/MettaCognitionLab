@@ -47,7 +47,6 @@ function at_footer($wp_customize){
     $wp_customize->add_section('at-footer-section', array(
         'title' => 'Footer'
     ));
-    $wp_customize->remove_section('static_front_page');
 
     $wp_customize->add_setting('at-footer-display', array(
         'default' => 'Yes'
@@ -232,7 +231,7 @@ function at_customize_css(){ ?>
         hr{
             background-image: linear-gradient(to right, rgba(0, 0, 0, 0), <?php echo get_theme_mod('at_text_color'); ?>, rgba(0, 0, 0, 0));
         }
-        .hero-image{
+        .hero-image, .hero-post-image{
             border-bottom: 4px solid <?php echo get_theme_mod('at_text_color'); ?>;
         }
         header{
@@ -245,6 +244,41 @@ function at_customize_css(){ ?>
             border-top: 2px solid <?php echo get_theme_mod('at_text_color'); ?>;
             border-bottom: 2px solid <?php echo get_theme_mod('at_text_color'); ?>;
         }
+        .wp-block-quote{
+            border-left: 2px solid <?php echo get_theme_mod('at_text_color'); ?>;
+        }
+        td{
+            border: 2px solid <?php echo get_theme_mod('at_text_color'); ?>;
+        }
+        #rpwwt-recent-posts-widget-with-thumbnails-2{
+            border-top: 2px solid <?php echo get_theme_mod('at_text_color'); ?>;
+        }
+        .archive-head{
+            border-bottom: 2px solid <?php echo get_theme_mod('at_text_color'); ?>;
+        }
+        .wp-block-search input{
+            border: 2px solid <?php echo get_theme_mod('at_text_color'); ?>;
+        }
+        .wp-block-search button{
+            border: 2px solid <?php echo get_theme_mod('at_text_color'); ?>;
+            background: <?php echo get_theme_mod('at_text_color'); ?>;
+        }
+        .wp-block-search button:hover{
+            color: <?php echo get_theme_mod('at_secondary_text_color'); ?>;
+        }
+        .wp-block-button a:hover{
+            color: <?php echo get_theme_mod('at_secondary_text_color'); ?>;
+        }
     </style>
 <?php }
 add_action('wp_head', 'at_customize_css');
+
+if ( function_exists('register_sidebar') )
+  register_sidebar(array(
+    'name' => 'Footer Widget Area',
+    'before_widget' => '<div class = "widgetArea">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>',
+  )
+);
