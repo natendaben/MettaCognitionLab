@@ -17,7 +17,6 @@ add_action('wp_print_styles', 'startwordpress_google_fonts');
 // Navigation menus
 register_nav_menus(array(
     'primary' => __('Primary Menu'),
-    'footer' => __('Footer Menu'),
 ));
 
 // Support Featured Images
@@ -90,68 +89,7 @@ function at_footer($wp_customize){
 }
 add_action( 'customize_register', 'at_footer');
 
-//add module section to admin appearance customize screen
-function at_module($wp_customize){
-    $wp_customize->add_section('at-module-section', array(
-        'title' => 'Module'
-    ));
 
-    $wp_customize->add_setting('at-module-display', array(
-        'default' => 'No'
-    ));
-
-    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'at-module-display-control', array(
-        'label' => 'Display this section?',
-        'section' => 'at-module-section',
-        'settings' => 'at-module-display',
-        'type' => 'select',
-        'choices' => array(
-            'No' => 'No',
-            'Yes' => 'Yes'
-        )
-    )));
-
-    $wp_customize->add_setting('at-module-headline', array(
-        'default' => 'Headline goes here!'
-    ));
-
-    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'at-module-headline-control', array(
-        'label' => 'Headline',
-        'section' => 'at-module-section',
-        'settings' => 'at-module-headline',
-    )));
-
-    $wp_customize->add_setting('at-module-text', array(
-        'default' => 'Text goes here!'
-    ));
-
-    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'at-module-text-control', array(
-        'label' => 'Text',
-        'section' => 'at-module-section',
-        'settings' => 'at-module-text',
-        'type' => 'textarea'
-    )));
-
-    $wp_customize->add_setting('at-module-link');
-
-    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'at-module-link-control', array(
-        'label' => 'Link',
-        'section' => 'at-module-section',
-        'settings' => 'at-module-link',
-        'type' => 'dropdown-pages'
-    )));
-
-    $wp_customize->add_setting('at-module-image');
-
-    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control($wp_customize, 'at-module-image-control', array(
-        'label' => 'Image',
-        'section' => 'at-module-section',
-        'settings' => 'at-module-image',
-        'height' => 500,
-        'width' => 500,
-    )));
-}
-add_action( 'customize_register', 'at_module');
 
 // Customize Appearance Options
 function at_customize_register( $wp_customize ){
@@ -276,6 +214,16 @@ add_action('wp_head', 'at_customize_css');
 if ( function_exists('register_sidebar') )
   register_sidebar(array(
     'name' => 'Footer Widget Area',
+    'before_widget' => '<div class = "widgetArea">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>',
+  )
+);
+
+if ( function_exists('register_sidebar') )
+  register_sidebar(array(
+    'name' => 'About Sidebar',
     'before_widget' => '<div class = "widgetArea">',
     'after_widget' => '</div>',
     'before_title' => '<h3>',

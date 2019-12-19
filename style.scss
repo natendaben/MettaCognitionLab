@@ -14,6 +14,7 @@ $footerBgColor: #ACDCE2;
 $mainFont: 'Raleway', sans-serif;
 $accentFont: 'Bitter', serif;
 $standardMargin: 40px;
+$halfMargin: 20px;
 $oneAndAHalfMargin: 60px;
 $doubleMargin: 80px;
 $pageWidth: 70%;
@@ -76,7 +77,13 @@ hr {
      justify-content: center;
      align-items: center;
  }
+.mobileIcon{
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 23px;
 
+}
 
 /* ~~~~~~~~~~~~~~~~~~~~ HEADER STYLES ~~~~~~~~~~~~~~~~~~~~ */
 .title{
@@ -101,7 +108,8 @@ header{
     padding-top: 15px;
     padding-bottom: 15px;
     border-bottom: 4px solid $primaryColor;
-    /* background-color: #ACDCE2; */
+    overflow: hidden;
+    position: relative;
 }
 nav div ul{
     display: flex;
@@ -143,9 +151,6 @@ nav li:last-child{
     text-align: center;
     font-size: 200%;
     font-weight: bold;
-    /* font-family: 'Playfair Display', serif;
-    font-style: italic;
-    letter-spacing: 3px; */
 }
 .front-page-content{
     width: $pageWidth;
@@ -226,9 +231,11 @@ nav li:last-child{
     margin: 0;
     margin-top: $standardMargin;
 }
-// .wp-block-gallery{
-// }
 article>ul{
+    padding-top: $standardMargin; 
+    padding-left: $oneAndAHalfMargin;
+}
+.about-page-content>ul{
     padding-top: $standardMargin; 
     padding-left: $oneAndAHalfMargin;
 }
@@ -351,13 +358,29 @@ cite{
         color: $secondaryColor;
     }
 }
-.wp-block-embed-vimeo{
+.wp-block-embed{
     margin-top: $standardMargin;
     margin-bottom: 0;
     div{
         @include centerFlex();
     }
 }
+.wp-block-embed__wrapper{
+    position:relative;
+    padding-bottom:56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+}
+.wp-block-embed__wrapper iframe, .wp-block-embed__wrapper object, .wp-block-embed__wrapper embed{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+.video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-container iframe, .video-container object, .video-container embed, .video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 .page figure img{
     padding: 0;
 }
@@ -377,6 +400,30 @@ cite{
 }
 .rpwwt-post-excerpt{
     padding-top: 5px;
+}
+.wp-block-gallery{
+    padding-top: $standardMargin;
+}	
+
+ /* ~~~~~~~~~~~~~~~~~~~~ ABOUT PAGE STYLES ~~~~~~~~~~~~~~~~~~~~ */
+.about{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-column-gap: $doubleMargin;
+}
+.widgetArea img{
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+}
+.widgetArea p{
+    padding-top: $halfMargin;
+}
+.widgetArea h3{
+    padding-top: $halfMargin;
+}
+.about-page-content>.wp-block-gallery{
+    padding-left: 0;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~ MODULE STYLES ~~~~~~~~~~~~~~~~~~~~ */
@@ -432,3 +479,320 @@ footer{
     padding-left: 1%;
     padding-bottom: 15px;
 }
+
+@media screen and (max-width: 1250px){
+    nav ul li, .title a{
+        margin-left: 3%;
+        font-size: 110%;
+    }
+    .blog-title{
+        font-size: 100%;
+    }
+}
+@media screen and (max-width: 1100px){
+    .blog-title{
+        font-size: 90%;
+    }
+    #logo{
+        max-width: 50px;
+    }
+}
+@media screen and (max-width: 950px){
+    .hero-image{
+        height: 50vh;
+    }
+    nav ul li, .title a{
+        font-size: 100%;
+    }
+    .blog-title{
+        font-size: 85%;
+    }
+    #logo{
+        max-width: 30px;
+    }
+    //Font sizes
+    .about-short{
+        font-size: 180%;
+    }
+    .about-long{
+        font-size: 115%;
+    }
+    .hero-text{
+        font-size: 170%;
+    }
+    h2{
+        font-size: 200%;
+    }
+    h3{
+        font-size: 180%;
+    }
+    h4{
+        font-size: 130%;
+    }
+    p, li{
+        font-size: 110%;
+    }
+    #no-content{
+        font-size: 130%;
+    }
+    .date{
+        font-size: 125%;
+    }
+    .archive-head div{
+        font-size: 140%;
+    }
+    .has-large-font-size{
+        font-size: 160%;
+    }
+    .module-text h2{
+        font-size: 140%;
+    }
+    .footer-title{
+        font-size: 150%;
+    }
+}
+@media screen and (max-width: 780px){
+    header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: space-between;
+    }
+    nav div ul{
+        justify-content: space-between;
+        width: 80%;
+    }    
+    .title{
+        width: 80%;
+        justify-content: center;
+        margin-left: 0;
+    }
+    nav ul li{
+        margin: 0px 5px 0px 5px;
+    }
+    .title a{
+        margin-left: 0;
+    }
+    .blog-title{
+        padding-left: 10px;
+    }
+    nav{
+        margin-top: 5px;
+    }
+}
+@media screen and (max-width: 600px){
+    .module-grid{
+        grid-template-columns: 1fr;
+    }
+    .about{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .about-sidebar{
+        margin-top: $halfMargin;
+    }
+    .hero-image{
+        height: 40vh;
+    }
+    //Font sizes
+    .about-short{
+        font-size: 160%;
+    }
+    .about-long{
+        font-size: 105%;
+    }
+    .hero-text{
+        font-size: 150%;
+    }
+    h2{
+        font-size: 150%;
+    }
+    h3{
+        font-size: 130%;
+    }
+    h4{
+        font-size: 115%;
+    }
+    p, li{
+        font-size: 100%;
+    }
+    #no-content{
+        font-size: 110%;
+    }
+    .date{
+        font-size: 110%;
+    }
+    .archive-head div{
+        font-size: 130%;
+    }
+    .has-large-font-size{
+        font-size: 120%;
+    }
+    .module-text h2{
+        font-size: 120%;
+    }
+    .footer-title{
+        font-size: 125%;
+    }
+    #footer-logo{
+        max-width: 40px;
+    }
+    //MARGINS
+    h2, h3, h4, h5, h6{
+        padding-top: $halfMargin;
+    }
+    hr{
+        margin-top: $halfMargin;
+    }
+    .content-container{
+        @include centerFlex();
+        padding: $halfMargin 0 $standardMargin 0;
+    }
+    .page img{
+        padding-top: $halfMargin;
+    }
+    .page p{
+        padding-top: $halfMargin;
+    }
+    .wp-block-cover, .wp-block-cover-image {
+        margin-top: $halfMargin;
+    }
+    .wp-block-image{
+        margin-top: $halfMargin;
+    }
+    article>ul{
+        padding-top: $halfMargin; 
+    }
+    .about-page-content>ul{
+        padding-top: $halfMargin; 
+    }
+    .wp-block-quote{
+        margin-top: $halfMargin;
+    }
+    .wp-block-audio{
+        padding-top: $halfMargin; 
+    }
+    .wp-block-file{
+        margin-top: $halfMargin;
+    }
+    .wp-block-video{
+        margin-top: $halfMargin;
+    }
+    .wp-block-code{
+        margin-top: $halfMargin;
+    }
+    .wp-block-preformatted{
+        margin-top: $halfMargin;
+    }
+    .wp-block-pullquote{
+        margin-top: $halfMargin;
+    }
+    .wp-block-table{
+        margin-top: $halfMargin;
+    }
+    .wp-block-verse{
+        margin-top: $halfMargin;
+    }
+    .wp-block-button{
+        margin-top: $halfMargin;
+    }
+    .wp-block-media-text{
+        margin-top: $halfMargin;
+    }
+    .wp-block-search{
+        margin-top: $halfMargin;
+    }
+    .wp-block-embed{
+        margin-top: $halfMargin;
+    }
+    #rpwwt-recent-posts-widget-with-thumbnails-2{
+        margin-top: $halfMargin;
+    
+        h3{
+            margin-bottom: $halfMargin;
+        }
+    }
+    .wp-block-gallery{
+        padding-top: $halfMargin;
+    }	
+}
+@media screen and (max-width: 420px){
+    .blog-title{
+        font-size: 70%;
+    }
+    #logo{
+        max-width: 20px;
+    }
+    nav div ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: none;
+        width: 100%;
+    }
+    .mobileIcon{
+        display: block;
+    }
+    nav ul li{
+        margin: 0;
+    }
+    header{
+        align-items: flex-start;
+    }
+    nav{
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    //Font sizes
+    .about-short{
+        font-size: 140%;
+    }
+    .about-long{
+        font-size: 100%;
+    }
+    .hero-text{
+        font-size: 135%;
+    }
+    h2{
+        font-size: 135%;
+    }
+    h3{
+        font-size: 120%;
+    }
+    h4{
+        font-size: 110%;
+    }
+    p, li{
+        font-size: 100%;
+    }
+    #no-content{
+        font-size: 105%;
+    }
+    .date{
+        font-size: 105%;
+    }
+    .archive-head div{
+        font-size: 115%;
+    }
+    .has-large-font-size{
+        font-size: 110%;
+    }
+    .module-text h2{
+        font-size: 110%;
+    }
+    .footer-title{
+        font-size: 100%;
+    }
+    .footer-tagline{
+        font-size: 80%;
+    }
+    .copyright{
+        font-size: 70%;
+    } 
+    #footer-logo{
+        max-width: 40px;
+    }
+}
+

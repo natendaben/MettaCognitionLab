@@ -1,14 +1,21 @@
 <?php
-
 get_header();
 
 if(have_posts()) :
   while(have_posts()) : the_post(); ?>
 
-  <article class="post page">
-    <h2><?php the_title(); ?></h2>
-    <?php the_content(); ?>
-  </article>
+  <div class="content-container">
+    <article class="about page">
+      <div class="about-page-content">
+        <?php the_content(); ?>
+      </div>
+      <div class="about-sidebar">
+      <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("About Sidebar") ) : ?>
+      <?php endif;?>
+      </div>
+
+    </article>
+  </div>
 
   <?php endwhile;
 
